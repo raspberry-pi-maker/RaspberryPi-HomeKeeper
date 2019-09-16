@@ -228,7 +228,7 @@ api_key = "your_pushbullet_access_token"
 pb = Pushbullet(api_key)
 push = pb.push_note("title", "MotionEye detects strange movement. Pls check the NAS")
 ```
-Let's run the code and check your phone. Ifeverything is OK, you should get the notification like this.
+Let's run the code and check your phone. If everything is OK, you should get the notification like this.
 ```console
 python bullet.py
 ```
