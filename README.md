@@ -71,7 +71,9 @@ There's an excellent video clip at Youtube. You can get a lot of motioneye infor
 
 
 ## Prepare remote storage
-As you know, raspberry pi use a micro sd card as its storage. If you want to store the captured videos, they may occupy a lot of capacity. So you should care about storage usage. If you have a NAS in your home, it's a good choice to store captured videos, images to your NAS instead of local sd card. If you don't have, you may consider using cloud storage like Google Drive, Microsoft OneDrive, DropBox ...</br></br>
+As you know, raspberry pi use a micro sd card as its storage. If you want to store the captured videos, they may occupy a lot of capacity. So you should care about storage usage. If you have a NAS in your home, it's a good choice to store captured videos, images to your NAS instead of local sd card. If you don't have, you may consider using cloud storage like Google Drive, Microsoft OneDrive, DropBox ...If you want to use Google Drive, this video will help you.
+[![youtube](./image/1-15.png)](https://youtu.be/O5ifTks4w4U?t=1216)<br /><br />
+</br></br>
 
 #### NAS setup
 I'm using a Western DIgitals MyCloud NAS. Today many NAS venders provides remote access services using many devices like PC, smartphone, tablet. So I store the videos, images on the NAS, I can freely access the data from the outside using my phone. If you use another NAS, you may do the same job with their manuals.
