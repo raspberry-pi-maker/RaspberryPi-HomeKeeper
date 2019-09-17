@@ -152,12 +152,13 @@ drwxrwxrwx+ 3 root   share     4096 Sep 15 19:49 ..
 </br></br>
 
 ## Notifying events 
-Altough you have finished installing motioneye raspberry pi, there's one thing to think about. When your pi detects motions and record the video, saves still images, how can you know? motioneye supports some built in notofications. Sending Email is the first one. But you won't know the incident until you check your email. If we can implement real time notification service, it would be a much better choice.</br></br>
+Altough you have finished installing motioneye raspberry pi, there's one thing to think about. When your motioneye pi detects motions and record the video, saves still images, how can you know? motioneye supports some built in notofications. Sending Email is the first one. But you won't know the incident until you check your email. If we can implement real time notification service, it would be a much better choice.</br></br>
 
 #### No EMail but Push Service
-Perhaps the best service is to use your mobile phone.  In this section I'm going to implement real time push service using free push services like pushetta, Pushbullet(100 free per month). There are also many paied service like Pushover, AWS SNS which provides more stable services. If you are interested, check it out at https://pushover.net/.  Free push services don't send via SMS, MMS. So there should be an app that can receive notification in your phone.
+Perhaps the best real time notification service is to use your mobile phone.  In this section I'm going to implement real time push service using free push services like pushetta, Pushbullet(100 free per month). There are also many paied service like Pushover, AWS SNS which provides more stable services. If you are interested, check it out at https://pushover.net/.  Free push services don't send via SMS, MMS. So there should be an app that can receive notification in your phone.
 If you are good at Android or IOS development, you can make your own push service mobile app that receives notifications from motioneye pi. If you are not an mobile developer, you can also use a ready made app from Google Play.</br></br>
 
+<!---
 ## Pushetta push service 
 #### Signup Pushetta 
 Visit http://www.pushetta.com/accounts/signup/ and make your account.
@@ -177,7 +178,7 @@ Install Pushetta App and configure a channel. Search for "HomeKeeper" in the Dis
 ![pushetta_config](./image/1-11.png)<br /><br />
 
 We have done phone work! Now lets's go back to motioneye and configure to send notifications from your pi.</br></br>
-
+--->
 ## Pushbullet push service 
 Most push services are similar in usage. If you have trouble with the installation process, googling will help you.<br /><br />
 #### Signup Pushbullet 
@@ -186,7 +187,7 @@ After signing up, create a channel.
 Then click the "Create Access Token" button to make Access Token. Don't others know your Access Token. We will use this value later in our Python program.<br />
 ![pushbullet_config](./image/1-12.png)<br /><br />
 
->⚠️ ***Warning***: Pushbullet only free 100 per month. If notification exceeds this value, your phone might not receive push messages. If you receive more than 100 notifications per month, consider using the pro version.
+>⚠️ ***Warning***: Pushbullet only free 100 per month. If notification exceeds this value, your phone might not receive push messages. If you receive more than 100 notifications per month, consider using the Pushbullet pro version or other paied services. 
 
 #### Pushbullet android app
 Install Pushbullet App on your phone and sign in with the same account. 
@@ -196,7 +197,7 @@ Install Pushbullet App on your phone and sign in with the same account.
 
 ## Sending notification from motioneye pi 
 Altough you have finished installing motioneye raspberry pi, there's one thing to think about. When your pi detects motions and record the video, saves still images, how can you know? motioneye supports some built in notifications. Sending Email is the first one. But you won't know the incident until you check your email. If we can implement real time notification service, it would be a much better choice.
-
+<!---
 ## Pushetta python code
 Before making python code, install the required packages.
 ```console
@@ -212,7 +213,7 @@ CHANNEL_NAME="HomeKeeper"
 p=Pushetta(API_KEY)
 p.pushMessage(CHANNEL_NAME, "MotionEye detects strange movement. Pls check the NAS")
 ```
-
+--->
 
 ## Pushbullet push service
 Before making python code, install the required packages.
