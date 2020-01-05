@@ -1,6 +1,6 @@
 # RaspberryPi-HomeKeeper
 
-If you are Korean and want to use KaKao Talk instead of android push service, please see '카톡 보내기.md'
+If you are Korean and want to use KaKao Talk instead of android push service, please see '카톡 보내기.md'.</br>
 The other day, when I came back home, I found that the window is opend by someone.
 Perhaps he(maybe thief) opened the window for looking around the house. Fortunately, the thief did not steal anything.
 I decided to make a video monitoring system that automatically alarms to me when it catches unnormal signs.</br>
