@@ -64,7 +64,7 @@ Now you should see the captured video, check your camera is connected correctly.
 >⚠️ ***Tip***
 * Run raspi-config and check if CSI camera is enabled
 * If you use an webcam, run lsusb command to check the webcam device
-* Run raspi-still -o /tmp/test.jpg to capture a test still image.<br /><br />
+* Run raspistill -o /tmp/test.jpg to capture a test still image. (But the motion-eye process may own the camera resource, so you have to stop the motioneye service first. Run "systemctl stop motioneye" then run the raspistill process.)<br /><br />
 
 #### general settings
 There's an excellent video clip at Youtube. You can get a lot of motioneye information from this video.
