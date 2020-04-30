@@ -121,7 +121,7 @@ Select the "Google Drive" and then enter the Location which is the sub directory
 Follow the instructions on the screen. Then you may get the Key values like this. Copy this key and paste it into the Authorization Key.<br />
 ![initial](./image/g-3.png)<br />
 
-THen click the "Test Service" button, if successful, you can see the "Accessing the upload service succeeded!" text on the screen.<br />
+Then click the "Test Service" button, if successful, you can see the "Accessing the upload service succeeded!" text on the screen.<br />
 ![initial](./image/g-4.png)<br />
 Finally enter the Apply button. <br />
 >⚠️ ***Warning***: Depending on the internet speed you use, high resolution video, image files may not be suitable for cloud upload. 
