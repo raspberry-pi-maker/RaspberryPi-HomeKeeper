@@ -35,6 +35,40 @@ If you are not Korean, You can find many many pages at google. Just type \"raspb
 7. run raspi-config and enable the CSI camera
 8. run raspi-config and do what you want to set up and reboot the system. </br></br> 
 
+## Rasbian Lite on the Raspberri Pi 3B Wifi Setup
+Rasbian OS tool "raspi-config" supports WiFi setup. So you can use this utility to configure the WiFi Network.
+Follow these steps.
+1. Run "raspi-config" and goto the Network Options.
+![initial](./image/w-1.png)<br />
+2. Select the Wi-fi
+![initial](./image/w-2.png)<br />
+3. Select the Counrty.
+>⚠️ ***Warning***
+* Choose GB or US. Other country code may not work properly. In my case, KR(South Korea) does not work properly.
+![initial](./image/w-3.png)<br />
+4. Enter the SSID of your Wireless Router.
+![initial](./image/w-4.png)<br />
+5. Enter the password of your Wireless Router if exists.
+![initial](./image/w-5.png)<br />
+
+
+The values ​​set above are stored in /etc/wpa_supplicant/wpa_supplicant.conf. Therefore, you can directly modify this value.
+``` bash
+root@raspberrypi:~# vi /etc/wpa_supplicant/wpa_supplicant.conf
+
+
+    ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+    update_config=1
+    country=GB
+    network={
+            ssid="SSID"
+            psk="Password"
+    }
+```
+>⚠️ ***Warning***: The WiFi network setup method introduced in this article is when using Rasbian Lite. When using Motioneye OS, it can be set in a web browser.
+
+<br />
+
 ## motionEye install
 You can find all installation procedure at https://github.com/ccrisan/motioneye/wiki/Install-On-Raspbian.  
 >⚠️ ***Warning***: install with root account, don't install with sudo command. Do like this. Because motioneye installation checks and uses the current user's home directory. So using root account is a better choice. 
@@ -52,7 +86,7 @@ If you have done the above procedures without any errors, You can access motionE
 #### login
 You should log in as an admin. Press a human like icon in the upper left corner to log in. 
 ![initial](./image/1-2.png)<br /><br />
-Default admin account is Username "admin" and no Password. As an admin, you can setup motioneye's camera, resolution, motion detection, storing videos, etc.
+Default admin account is Username <em><strong>"admin" and no Password</strong></em>. As an admin, you can setup motioneye's camera, resolution, motion detection, storing videos, etc.
 ![initial](./image/1-4.png)<br />
 
 #### add camera
@@ -64,7 +98,7 @@ Now you should see the captured video, check your camera is connected correctly.
 >⚠️ ***Tip***
 * Run raspi-config and check if CSI camera is enabled
 * If you use an webcam, run lsusb command to check the webcam device
-* Run raspistill -o /tmp/test.jpg to capture a test still image. (But the motion-eye process may own the camera resource, so you have to stop the motioneye service first. Run "systemctl stop motioneye" then run the raspistill process.)<br /><br />
+* Run raspistill -o /tmp/test.jpg to capture a test still image. (But the motioneye process may own the camera resource, so you have to stop the motioneye service first. Run "systemctl stop motioneye" then run the raspistill process.)<br /><br />
 
 #### general settings
 There's an excellent video clip at Youtube. You can get a lot of motioneye information from this video.
@@ -76,7 +110,23 @@ As you know, raspberry pi use a micro sd card as its storage. If you want to sto
 [![youtube](./image/1-15.png)](https://youtu.be/O5ifTks4w4U?t=1216)<br /><br />
 </br></br>
 
-#### NAS setup
+### Google Drive setup
+To use cloud storage like Google Drive, first enable the "File Storage -> Upload Media Files". Then you can see the Upload Services like "Google Drive".<br />
+
+![initial](./image/g-1.png)<br />
+
+Select the "Google Drive" and then enter the Location which is the sub directory name in your Google Drive. Then Click the "Obtain Key" link. Perhaps a new browser window will open, which will log you into your Google Account.<br />
+![initial](./image/g-2.png)<br />
+
+Follow the instructions on the screen. Then you may get the Key values like this. Copy this key and paste it into the Authorization Key.<br />
+![initial](./image/g-3.png)<br />
+
+THen click the "Test Service" button, if successful, you can see the "Accessing the upload service succeeded!" text on the screen.<br />
+![initial](./image/g-4.png)<br />
+Finally enter the Apply button. <br />
+>⚠️ ***Warning***: Depending on the internet speed you use, high resolution video, image files may not be suitable for cloud upload. 
+
+### NAS setup
 I'm using a Western DIgitals MyCloud NAS. Today many NAS venders provides remote access services using many devices like PC, smartphone, tablet. So I store the videos, images on the NAS, I can freely access the data from the outside using my phone. If you use another NAS, you may do the same job with their manuals.
 
 1. Connect NAS from WebBrowser http://wdmycloud.local/UI/ and log in with your account
@@ -114,10 +164,10 @@ drwxrwxr-x  9 root   share 4096 Sep 15 16:31 ..
 ```
 </br></br>
 
-## finishing the motioneye setup 
+## Finishing the motioneye setup 
 Now you can store big size video files on your NAS. It's time to finish the motioneye setup. 
 
-#### motion detection
+#### Motion detection
 If there's no movement, you don't have to store motionless videos.  
 ![motiondetect](./image/1-6.png)<br /><br />
 
