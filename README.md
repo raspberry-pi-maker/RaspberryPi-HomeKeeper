@@ -294,5 +294,5 @@ Let motioneye call the python scripts when it detects motions. Suppose you have 
 IN motioneye settings, enable "Run As End Command", and enter the command "python /usr/local/src/bullet.py" 
 ![motioneye_notify](./image/1-14.png)<br /><br />
 
-Now you can receive real time notifications when motioneye pi detects motions. Most NAS venders provide android, IOS apps that can navigate your NAS. When you receive a push notification from your pi, open your NAS app and you can see the images, videos on your NAS.
+Now you can receive real time notifications when motioneye pi detects motions. Most NAS venders provide android, IOS apps that can navigate your NAS. When you receive a push notification from your pi, open your NAS app and you can see the images, videos on your NAS. If you set up Google Drive, you can check the uploaded image or video in Google Drive.
 Happy HomeKeeping. ~~~
